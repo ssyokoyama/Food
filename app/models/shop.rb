@@ -1,7 +1,11 @@
 class Shop < ApplicationRecord
-  validates :password, length: { in: 8..32 }
-  validates :email, format: {with: /\A[\w+\-~.]+@[a-z\d\-.]+\.[a-z]+\z/i}
-  validates :password, format: {with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{8,32}\z/i}
-  validates :name, presence: true, length: { maximum: 50 }
-    has_secure_password
-  end
+  validates :name, presence: true
+  validates :email, presence: true
+  validates :shop_id, presence: true
+  validates :city_id, presence: true
+  validates :prefecture_id, presence: true
+
+
+  has_many :items
+  mount_uploader :image, ImageUploader
+end
