@@ -8,5 +8,6 @@ class Item < ApplicationRecord
   validates :finish_at, presence: true
 
   has_many :shops
+  
   mount_uploader :image, ImageUploader
 end

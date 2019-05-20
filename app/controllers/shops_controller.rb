@@ -5,7 +5,7 @@ class ShopsController < ApplicationController
 
   def create
 
-    @shop = Shop.new(user_params)
+    @shop = Shop.new(shop_params)
     if @shop.save
       redirect_to root_path, success: '登録が完了しました'
     else
@@ -16,6 +16,6 @@ class ShopsController < ApplicationController
 
   private
   def shop_params
-   params.require(:shop).permit(:name, :email, :password, :password_confirmation)
+   params.require(:shop).permit(:name, :email)
   end
 end
