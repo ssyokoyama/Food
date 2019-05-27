@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+            <%= render 'sidebar' %>
+            <div class="col-sm-9">
+                <h2>店舗管理</h2>
+                <table class="table table-responsive table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">店舗名</th>
+                            <th scope="col">メールアドレス</th>
+                            <th scope="col">電話番号</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @shops.each do |shop| %>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><%= shop.name %></td>
+                            <td><%= shop.email %></td>
+                            <td>090-9999-9999 </td>
+                            <td>
+                                <%= link_to '詳細', shop_path(shop), class: "btn btn-primary" %>
+                                <%= link_to '詳細', edit_shop_path(shop), class: "btn btn-success" %>
+                            </td>
+                        </tr>
+                        <% end %>
+                  </tbody>
+                </table>
+            </div>
+    </div>
+</div>

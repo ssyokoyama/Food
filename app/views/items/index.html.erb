@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+
+            <div class="col-sm-9">
+                <h2>商品管理</h2>
+                <table class="table table-responsive table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">商品名</th>
+                            <th scope="col">商品説明</th>
+                            <th scope="col">値段</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @items.each do |shop| %>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><%= item.name %></td>
+                            <td><%= item.introduction %></td>
+                            <td><%= item.price %></td>
+                            <td>100</td>
+                            <td>
+                                <%= link_to '詳細', item_path(item), class: "btn btn-primary" %>
+                                <%= link_to '詳細', edit_item_path(item), class: "btn btn-success" %>
+                            </td>
+                        </tr>
+                        <% end %>
+                  </tbody>
+                </table>
+            </div>
+    </div>
+</div>

@@ -1,22 +1,34 @@
-<div class="item-new-wrapper" >
+<div class="items-new-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h1 class="text-center">商品登録して下さい</h1>
+      <div class="col-md-offset-4 col-md-4 items-new-container">
+        <h3 class="text-center text-white">商品登録して下さい</h3>
         <%= form_for @item do |f| %>
+
           <div class="form-group">
             <%= f.label :image %>
             <%= f.file_field :image%>
           </div>
 
           <div class="form-group">
-            <%= f.label :description %>
-            <%= f.text_area :description, class: 'form-control' %>
+            <%= f.label :name, class: 'text-white' %>
+            <%= f.text_field :name, class: 'form-control' %>
           </div>
 
-          <%= f.submit '商品登録', class: 'btn btn-black btn-block' %>
+          <div class="form-group">
+            <%= f.label :description, class: 'text-white' %>
+            <%= f.text_field :description, class: 'form-control' %>
+          </div>
 
+          <div class="form-group">
+            <%= f.label :price, class: 'text-white' %>
+            <%= f.text_field :price, class: 'form-control' %>
+          </div>
+
+
+          <%= f.submit "店舗登録", class: 'btn-block btn-white' %>
         <% end %>
+
       </div>
     </div>
   </div>

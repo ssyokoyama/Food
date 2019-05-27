@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <%= render 'sidebar' %>
+        <div class="col-sm-9">
+            <h2>店舗情報</h2>
+            <div class="card" style="">
+                <div class="card-header" style="background: red;">
+                    <%= image_tag "icons/logo.png", style: 'width: 100%;', class: "card-img-top" %>
+                </div>
+              <div class="card-body">
+                <h3 class="card-title"><%= @shop.name %></h3>
+                <p class="card-text">店舗の説明文など</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">連絡先：<%= @shop.email %></li>
+              </ul>
+              <div class="card-body">
+                  <%= link_to '編集', edit_shop_path(@shop), class: 'card-link' %>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
