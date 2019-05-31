@@ -14,19 +14,33 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% @items.each do |shop| %>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td><%= item.name %></td>
-                            <td><%= item.introduction %></td>
-                            <td><%= item.price %></td>
-                            <td>100</td>
-                            <td>
-                                <%= link_to '詳細', item_path(item), class: "btn btn-primary" %>
-                                <%= link_to '詳細', edit_item_path(item), class: "btn btn-success" %>
-                            </td>
-                        </tr>
-                        <% end %>
+                      <% if @items %>
+                     <% @items.each do |item| %>
+                     <tr>
+                         <th scope=“row”>1</th>
+                         <td><%= item.name %></td>
+                         <td><%= item.introduction %></td>
+                         <td><%= item.price %></td>
+                         <td>100</td>
+                         <td>
+                             <%= link_to ‘詳細‘, item_path(item), class: “btn btn-primary” %>
+                             <%= link_to ‘詳細’, edit_item_path(item), class: “btn btn-success” %>
+                         </td>
+                     </tr>
+                     <% end %>
+                    <% end %>
+
+                    <% if @item.errors.any? %>
+                     <div id=“error_explanation”>
+                       <h2><%= @item.errors.count %>件のエラーがあります。</h2>
+
+                       <ul>
+                       <% @item.errors.full_messages.each do |msg| %>
+                         <li><%= msg %></li>
+                       <% end %>
+                       </ul>
+                     </div>
+                   <% end %>
                   </tbody>
                 </table>
             </div>
