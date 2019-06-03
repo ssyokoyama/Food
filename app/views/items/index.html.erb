@@ -32,17 +32,7 @@
                      <% end %>
                     <% end %>
 
-                  <% if @item.erros.any? %>
-                     <div id=“error_explanation”>
-                       <h2><%= @item.errors.count %>件のエラーがあります。</h2>
-
-                       <ul>
-                       <% @item.errors.full_messages.each do |msg| %>
-                         <li><%= msg %></li>
-                       <% end %>
-                       </ul>
-                     </div>
-                   <% end %>
+                
                   </tbody>
                 </table>
             </div>

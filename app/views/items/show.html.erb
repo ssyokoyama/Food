@@ -4,8 +4,9 @@
         <div class="col-sm-9">
             <h2>商品情報</h2>
             <div class="card" style="">
-                <div class="card-header" style="background: red;">
-                    <%= image_tag "icons/logo.png", style: 'width: 100%;', class: "card-img-top" %>
+             <% if !topic.image.url.nil?  %>
+              <%= image_tag topic.image.url %>
+          <%end%>
                 </div>
               <div class="card-body">
                 <h3 class="card-title"><%= @item.name %></h3>
@@ -15,7 +16,7 @@
                 <li class="list-group-item">連絡先：<%= @item.email %></li>
               </ul>
               <div class="card-body">
-                  <%= link_to '編集', edit_shop_path(@item), class: 'card-link' %>
+                  <%= link_to '編集', edit_item_path(@item), class: 'card-link' %>
               </div>
             </div>
         </div>

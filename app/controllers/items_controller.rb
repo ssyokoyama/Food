@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  # before_action :check_login
+  before_action :check_login, except: [:index, :show]
 
   def new
     @item = Item.new
@@ -12,8 +12,9 @@ class ItemsController < ApplicationController
   def show
     @item = Item.find(params[:id])
   end
-
-
+  def edit
+    @item = Item.find(params[:id])
+  end
 
   def create
 
