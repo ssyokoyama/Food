@@ -17,23 +17,23 @@
     <nav class="navbar navbar-default navbar-transparent">
       <div class="container">
         <%= link_to root_path do %>
-          <span><%= image_tag "icons/logo.png", class: "navbar-brand" %></span>
+          <span><h2>TOP</h2></span>
         <% end %>
         <ul class="nav navbar-nav navbar-right">
           <% if logged_in? %>
             <li>
-              <%= link_to "#" do %>
-                <%= image_tag "icons/heart.png" %>
+              <%= link_to new_shop_path do %>
+                <h3>店舗登録</h3>
               <% end %>
             </li>
             <li>
               <%= link_to new_item_path do %>
-                <%= image_tag 'icons/camera.png' %>
+              <h3>商品登録</h3>
               <% end %>
             </li>
             <li>
               <%= link_to logout_path, method: :delete do %>
-                <%= image_tag "icons/logout.png" %>
+                <h3>ログアウト</h3>
               <% end %>
             </li>
           <% else %>

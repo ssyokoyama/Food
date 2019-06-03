@@ -1,39 +1,23 @@
-<div class="container">
+<<div class="container">
     <div class="row">
         <%= render 'sidebar' %>
         <div class="col-sm-9">
-            <h2>商品紹介</h2>
+            <h2>商品情報</h2>
             <div class="card" style="">
                 <div class="card-header" style="background: red;">
                     <%= image_tag "icons/logo.png", style: 'width: 100%;', class: "card-img-top" %>
                 </div>
-                <div class="card-deck">
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title">商品名</h4>
-        <p class="card-text">商品紹介</p>
-        <p class="card-text">値段</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+              <div class="card-body">
+                <h3 class="card-title"><%= @item.name %></h3>
+                <p class="card-text">商品の説明文など</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">連絡先：<%= @item.email %></li>
+              </ul>
+              <div class="card-body">
+                  <%= link_to '編集', edit_shop_path(@item), class: 'card-link' %>
+              </div>
+            </div>
+        </div>
     </div>
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title">商品名</h4>
-        <p class="card-text">商品紹介</p>
-        <p class="card-text">値段</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h4 class="card-title">商品名</h4>
-        <p class="card-text">商品紹介</p>
-        <p class="card-text">値段</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
-    </div>
-  </div>
 </div>

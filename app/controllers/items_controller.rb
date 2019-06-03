@@ -1,13 +1,14 @@
 class ItemsController < ApplicationController
-  before_action :check_login
+  # before_action :check_login
 
   def new
     @item = Item.new
   end
 
   def index
-    @shops = Item.all
+    @items = Item.all
   end
+
   def show
     @item = Item.find(params[:id])
   end
@@ -18,7 +19,7 @@ class ItemsController < ApplicationController
 
     @item = Item.new(item_params)
     if @item.save
-      redirect_to root_path, success: '登録が完了しました'
+      redirect_to items_path, success: '登録が完了しました'
     else
       flash.now[:danger] = "登録に失敗しました"
       render :new

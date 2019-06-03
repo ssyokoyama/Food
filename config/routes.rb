@@ -14,4 +14,8 @@ Rails.application.routes.draw do
   resources :users
   resources :items
   resources :shops
+
+  get 'favorites/index'
+  post '/favorites', to: 'favorites#create'
+  
 end

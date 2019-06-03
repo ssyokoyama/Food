@@ -9,6 +9,7 @@ class Item < ApplicationRecord
   validates :description, presence: true
 
   has_many :shops
+  has_many :users
 
   mount_uploader :image, ImageUploader
 end

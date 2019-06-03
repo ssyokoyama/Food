@@ -2,7 +2,7 @@ class ShopsController < ApplicationController
   def new
     @shop = Shop.new
   end
-  
+
   def index
     @shops = Shop.all
   end
@@ -14,7 +14,7 @@ class ShopsController < ApplicationController
 
     @shop = Shop.new(shop_params)
     if @shop.save
-      redirect_to root_path, success: '登録が完了しました'
+      redirect_to shops_path, success: '登録が完了しました'
     else
       flash.now[:danger] = "登録に失敗しました"
       render :new
