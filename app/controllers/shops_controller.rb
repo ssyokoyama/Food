@@ -10,6 +10,14 @@ class ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
   end
 
+  def edit
+    @shop = Shop.find(params[:id])
+  end
+
+  def update
+    @shop = Shop.find(params{:id})
+  end
+
   def create
 
     @shop = Shop.new(shop_params)
@@ -23,6 +31,6 @@ class ShopsController < ApplicationController
 
   private
   def shop_params
-   params.require(:shop).permit(:name, :email)
+   params.require(:shop).permit(:name, :email, :user_id)
   end
 end

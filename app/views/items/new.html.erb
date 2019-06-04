@@ -16,10 +16,24 @@
          <% end %>
         <%= form_for @item do |f| %>
 
+
+      
+
+          <select name="shop_id" id="">
+         <option value="1">店舗1</option>
+         <option value="2">店舗2</option>
+         <option value="3">店舗3</option>
+         <option value="4">店舗4</option>
+         <option value="5">店舗5</option>
+     </select>
+
+
           <div class="form-group">
             <%= f.label :image %>
             <%= f.file_field :image%>
           </div>
+
+
 
           <div class="form-group">
             <%= f.label :name, class: 'text' %>
