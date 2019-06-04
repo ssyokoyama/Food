@@ -15,7 +15,14 @@ class ShopsController < ApplicationController
   end
 
   def update
-    @shop = Shop.find(params{:id})
+    @shop = Shop.new(shop_params)
+    if @shop.update
+      redirect_to shops_path, success: '更新が完了しました'
+    else
+      flash.now[:danger] = "更新に失敗しました"
+      render :new
+    end
+
   end
 
   def create
