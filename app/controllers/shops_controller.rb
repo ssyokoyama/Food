@@ -1,12 +1,12 @@
 class ShopsController < ApplicationController
   before_action :check_login, except: [:index, :show]
-  
+
   def new
     @shop = Shop.new
   end
 
   def index
-    @shops = Shop.all
+    @shops = Shop.where(user_id: current_user.id)
   end
   def show
     @shop = Shop.find(params[:id])
@@ -30,6 +30,7 @@ class ShopsController < ApplicationController
   def create
 
     @shop = Shop.new(shop_params)
+    @shop.user_id = current_user.id
     if @shop.save
       redirect_to shops_path, success: '登録が完了しました'
     else

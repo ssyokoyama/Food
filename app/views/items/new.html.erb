@@ -19,7 +19,8 @@
 
         <%=form_for @item do |f|%>
         <%= f.label :"店舗名" %><br>
-        <%= f.select :description, [["店舗名", "shop_id"]] %>
+        <% shop_list = @shops.map{|shop|[shop.name ,shop.id]} %>
+        <%= f.select :shop_id, shop_list %>
 
 
 

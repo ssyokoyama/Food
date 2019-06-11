@@ -3,6 +3,8 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    # select 用に店舗を取得
+    @shops = Shop.where(user_id:current_user.id)
   end
 
   def index
@@ -15,9 +17,9 @@ class ItemsController < ApplicationController
   def edit
     @item = Item.find(params[:id])
   end
-  
-  def create
 
+  def create
+      @shops = Shop.where(user_id:current_user.id)
     @item = Item.new(item_params)
     if @item.save
       redirect_to items_path, success: '登録が完了しました'
