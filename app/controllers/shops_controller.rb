@@ -3,6 +3,7 @@ class ShopsController < ApplicationController
 
   def new
     @shop = Shop.new
+    @shops = Shop.where(prefecure_id:current_user.id)
   end
 
   def index
@@ -30,6 +31,7 @@ class ShopsController < ApplicationController
   def create
 
     @shop = Shop.new(shop_params)
+    @shops = Shop.where(prefecure_id:current_user.id)
     @shop.user_id = current_user.id
     if @shop.save
       redirect_to shops_path, success: '登録が完了しました'

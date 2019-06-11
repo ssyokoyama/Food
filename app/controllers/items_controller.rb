@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-      @shops = Shop.where(user_id:current_user.id)
+    @shops = Shop.where(user_id:current_user.id)
     @item = Item.new(item_params)
     if @item.save
       redirect_to items_path, success: '登録が完了しました'
