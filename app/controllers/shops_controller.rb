@@ -1,4 +1,6 @@
 class ShopsController < ApplicationController
+  before_action :check_login, except: [:index, :show]
+  
   def new
     @shop = Shop.new
   end

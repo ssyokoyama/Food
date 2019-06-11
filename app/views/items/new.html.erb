@@ -17,15 +17,17 @@
         <%= form_for @item do |f| %>
 
 
-      
+        <<%=form_for>
+        <%= f.select subject, [["店舗名", "shop_name"]] %>
+        <%= f.label :"店舗名" %><br>
+        <%= f.select :subject, [["店舗1", "店舗1"], ["店舗2", "店舗2"], ["店舗3", "店舗3"], ["店舗4", "店舗4"], ["店舗5", "店舗5"]
+        <%end%>
 
-          <select name="shop_id" id="">
-         <option value="1">店舗1</option>
-         <option value="2">店舗2</option>
-         <option value="3">店舗3</option>
-         <option value="4">店舗4</option>
-         <option value="5">店舗5</option>
-     </select>
+
+
+
+
+
 
 
           <div class="form-group">
