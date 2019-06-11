@@ -14,14 +14,15 @@
              </ul>
            </div>
          <% end %>
-        <%= form_for @item do |f| %>
 
 
-        <<%=form_for>
-        <%= f.select subject, [["店舗名", "shop_name"]] %>
+
+        <%=form_for @item do |f|%>
         <%= f.label :"店舗名" %><br>
-        <%= f.select :subject, [["店舗1", "店舗1"], ["店舗2", "店舗2"], ["店舗3", "店舗3"], ["店舗4", "店舗4"], ["店舗5", "店舗5"]
-        <%end%>
+        <%= f.select :description, [["店舗名", "shop_id"]] %>
+
+
+
 
 
 
