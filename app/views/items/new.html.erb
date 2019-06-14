@@ -22,16 +22,6 @@
         <% shop_list = @shops.map{|shop|[shop.name ,shop.id]} %>
         <%= f.select :shop_id, shop_list %>
 
-      
-
-
-
-
-
-
-
-
-
           <div class="form-group">
             <%= f.label :image %>
             <%= f.file_field :image%>
